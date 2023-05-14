@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform-style | Carreterra</title>
+  <style>
+    :root {
+      --width-referencia-pista: 250px;
+    }
+
+    *,
+    ::after,
+    ::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .contenedor-principal {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background: #238cd3;
+      background: linear-gradient(0deg, #d85f3b 0%, #0c85e7  100%);
+      overflow: hidden;
+    }
+    
+    .contenedor-ovni {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 100px;
+      margin-top: 2%;
+      margin-left: 2%;
+      position: absolute;
+      transform: rotate(330deg);
+    }
+      .ovni-cabeza {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(11, 7, 226);
+        border-radius: 50%;
+      }
+      .ovni-cuerpo {
+        width: 100%;
+        height: 50px;
+        margin-top: -25px;
+        background-color: rgb(31, 16, 243);
+        border-radius: 50%;
+      }
+
+    .contenedor-sol {
+      width: var(--width-referencia-pista);
+      height: 250px;
+      border-radius: 100%;
+      position: absolute;
+      top: 25%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      background: hsl(355, 93%, 44%);
+      background: linear-gradient(180deg, rgb(224, 191, 3) 0%, rgb(197, 7, 7) 100%);
+    }
+
+    .contenedor-carretera {
+      width: calc(var(--width-referencia-pista)/1.1);
+      height: 80%;
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translate(50%, 0);
+      transform-style: preserve-3d;
+      perspective: 200px;
+    }
+      .pista {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border: 5px solid rgb(12, 2, 2);
+        background-color: rgb(145, 97, 69);
+        transform: rotateX(45deg);
+      }
+      .cebra {
+        width: 2%;
+        height: 5%;
+        background-color: whitesmoke;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="contenedor-principal">
+    <div class="contenedor-ovni">
+      <div class="ovni-cabeza"></div>
+      <div class="ovni-cuerpo"></div>
+    </div>
+    <div class="contenedor-sol"></div>
+    <div class="contenedor-carretera">
+      <div class="pista">
+        <div class="cebra"></div>
+        <div class="cebra"></div>
+        <div class="cebra"></div>
+        <div class="cebra"></div>
+        <div class="cebra"></div>
+        <div class="cebra"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
